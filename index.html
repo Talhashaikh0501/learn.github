@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Glass Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+background:#060816;
+
+}
+
+/* Animated Background */
+
+body::before,
+body::after{
+
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(90px);
+animation:float 10s infinite alternate;
+
+}
+
+body::before{
+background:#6a5cff;
+left:-150px;
+top:-150px;
+}
+
+body::after{
+background:#00d4ff;
+right:-150px;
+bottom:-150px;
+animation-delay:4s;
+}
+
+@keyframes float{
+
+from{
+transform:translateY(0) translateX(0);
+}
+
+to{
+transform:translateY(80px) translateX(60px);
+}
+
+}
+
+.card{
+
+position:relative;
+width:390px;
+padding:45px;
+border-radius:28px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.5),
+
+0 0 30px rgba(0,212,255,.2);
+
+animation:appear .8s ease;
+
+}
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+width:80px;
+height:80px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#6a5cff,#00d4ff);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:34px;
+color:white;
+
+margin-bottom:20px;
+
+box-shadow:0 0 30px rgba(0,212,255,.5);
+
+}
+
+h2{
+
+text-align:center;
+color:white;
+margin-bottom:8px;
+
+}
+
+p{
+
+text-align:center;
+color:#c8c8c8;
+margin-bottom:35px;
+font-size:14px;
+
+}
+
+.input{
+
+position:relative;
+margin-bottom:22px;
+
+}
+
+.input input{
+
+width:100%;
+padding:16px 48px 16px 18px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:14px;
+
+outline:none;
+
+color:white;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.input input:focus{
+
+border-color:#00d4ff;
+
+box-shadow:0 0 20px rgba(0,212,255,.3);
+
+}
+
+.input span{
+
+position:absolute;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+color:white;
+user-select:none;
+
+}
+
+button{
+
+width:100%;
+padding:16px;
+
+border:none;
+border-radius:14px;
+
+background:linear-gradient(135deg,#6a5cff,#00d4ff);
+
+color:white;
+
+font-size:16px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 30px rgba(0,212,255,.35);
+
+}
+
+.bottom{
+
+margin-top:22px;
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:13px;
+
+}
+
+.bottom a{
+
+text-decoration:none;
+
+color:#d5d5d5;
+
+transition:.3s;
+
+}
+
+.bottom a:hover{
+
+color:#00d4ff;
+
+}
+
+@media(max-width:500px){
+
+.card{
+
+width:92%;
+padding:35px 25px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">⚡</div>
+
+<h2>Welcome Back</h2>
+
+<p>Sign in to continue</p>
+
+<div class="input">
+
+<input
+type="text"
+placeholder="Username"
+>
+
+</div>
+
+<div class="input">
+
+<input
+type="password"
+id="pass"
+placeholder="Password"
+>
+
+<span onclick="toggle()">👁</span>
+
+</div>
+
+<button>
+
+Login
+
+</button>
+
+<div class="bottom">
+
+<a href="#">Forgot Password?</a>
+
+<a href="#">Create Account</a>
+
+</div>
+
+</div>
+
+<script>
+
+function toggle(){
+
+let p=document.getElementById("pass");
+
+if(p.type==="password"){
+
+p.type="text";
+
+}else{
+
+p.type="password";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
