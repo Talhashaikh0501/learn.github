@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Speed Game</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f172a,#1e293b,#0b1020);
+color:white;
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:500px;
+text-align:center;
+}
+
+h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.box{
+width:100%;
+height:300px;
+background:rgba(255,255,255,0.05);
+border:2px solid rgba(255,255,255,0.1);
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+transition:0.3s;
+user-select:none;
+}
+
+.box.wait{
+background:#ef4444;
+}
+
+.box.ready{
+background:#22c55e;
+}
+
+.box.click{
+background:#3b82f6;
+}
+
+.stats{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+}
+
+button{
+margin-top:15px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#6366f1;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.best{
+color:#facc15;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ Reaction Speed Test</h1>
+
+<div id="box" class="box click">
+Click "Start" to begin
+</div>
+
+<div class="stats">
+<div>Time: <span id="time">--</span> ms</div>
+<div>Best: <span id="best">--</span> ms</div>
+</div>
+
+<button onclick="startGame()">Start</button>
+
+</div>
+
+<script>
+
+let startTime;
+let timeout;
+let running = false;
+let best = localStorage.getItem("best") || null;
+
+const box = document.getElementById("box");
+const timeEl = document.getElementById("time");
+const bestEl = document.getElementById("best");
+
+bestEl.innerText = best ? best : "--";
+
+function startGame(){
+if(running) return;
+
+running = true;
+box.className = "box wait";
+box.innerText = "Wait for green...";
+
+let delay = Math.random() * 3000 + 2000;
+
+timeout = setTimeout(() => {
+box.className = "box ready";
+box.innerText = "CLICK NOW!";
+startTime = Date.now();
+}, delay);
+}
+
+box.addEventListener("click", () => {
+
+if(!running) return;
+
+if(box.classList.contains("wait")){
+box.innerText = "Too early! ❌";
+clearTimeout(timeout);
+running = false;
+return;
+}
+
+if(box.classList.contains("ready")){
+let reaction = Date.now() - startTime;
+
+timeEl.innerText = reaction;
+
+if(!best || reaction < best){
+best = reaction;
+localStorage.setItem("best", best);
+bestEl.innerText = best;
+}
+
+box.className = "box click";
+box.innerText = "Click Start to play again";
+
+running = false;
+}
+});
+
+</script>
+
+</body>
+</html>

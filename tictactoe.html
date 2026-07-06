@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XO Premium</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#0f172a,#1e3a8a,#4f46e5,#0ea5e9);
+background-size:400% 400%;
+animation:bg 15s ease infinite;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0 50%}
+50%{background-position:100% 50%}
+100%{background-position:0 50%}
+}
+
+.container{
+width:430px;
+max-width:95%;
+padding:30px;
+border-radius:30px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+text-align:center;
+border:1px solid rgba(255,255,255,.15);
+animation:pop .8s;
+}
+
+@keyframes pop{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+h1{
+color:white;
+font-size:40px;
+margin-bottom:15px;
+letter-spacing:2px;
+}
+
+.turn{
+color:#ddd;
+margin-bottom:20px;
+font-size:18px;
+}
+
+.score{
+display:flex;
+justify-content:space-between;
+margin-bottom:25px;
+}
+
+.card{
+width:31%;
+padding:15px;
+border-radius:18px;
+background:rgba(255,255,255,.08);
+color:white;
+}
+
+.card h2{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.card span{
+font-size:28px;
+font-weight:bold;
+}
+
+.board{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.cell{
+height:110px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:55px;
+color:white;
+cursor:pointer;
+transition:.25s;
+user-select:none;
+}
+
+.cell:hover{
+transform:translateY(-5px) scale(1.05);
+background:rgba(255,255,255,.15);
+box-shadow:0 0 20px rgba(255,255,255,.25);
+}
+
+.win{
+background:#22c55e!important;
+animation:flash .6s infinite alternate;
+}
+
+@keyframes flash{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+button{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+font-size:17px;
+cursor:pointer;
+background:white;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.message{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:white;
+height:30px;
+}
+
+@media(max-width:500px){
+.cell{
+height:90px;
+font-size:42px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>XO GAME</h1>
+
+<div class="turn" id="turn">
+Player X Turn
+</div>
+
+<div class="score">
+
+<div class="card">
+<h2>X</h2>
+<span id="sx">0</span>
+</div>
+
+<div class="card">
+<h2>Draw</h2>
+<span id="sd">0</span>
+</div>
+
+<div class="card">
+<h2>O</h2>
+<span id="so">0</span>
+</div>
+
+</div>
+
+<div class="board">
+
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+
+</div>
+
+<button onclick="resetGame()">Restart</button>
+
+<div class="message" id="msg"></div>
+
+</div>
+
+<script>
+
+const cells=document.querySelectorAll(".cell");
+
+const turn=document.getElementById("turn");
+const msg=document.getElementById("msg");
+
+const sx=document.getElementById("sx");
+const so=document.getElementById("so");
+const sd=document.getElementById("sd");
+
+let board=["","","","","","","","",""];
+let player="X";
+let game=true;
+
+let scoreX=0;
+let scoreO=0;
+let draw=0;
+
+const wins=[
+[0,1,2],
+[3,4,5],
+[6,7,8],
+[0,3,6],
+[1,4,7],
+[2,5,8],
+[0,4,8],
+[2,4,6]
+];
+
+cells.forEach((cell,index)=>{
+
+cell.onclick=()=>{
+
+if(board[index]!=""||!game)return;
+
+board[index]=player;
+cell.innerHTML=player;
+
+if(checkWinner()){
+game=false;
+
+if(player=="X"){
+scoreX++;
+sx.innerHTML=scoreX;
+}else{
+scoreO++;
+so.innerHTML=scoreO;
+}
+
+msg.innerHTML=player+" Wins!";
+turn.innerHTML="Game Over";
+
+return;
+}
+
+if(!board.includes("")){
+draw++;
+sd.innerHTML=draw;
+msg.innerHTML="Draw!";
+game=false;
+return;
+}
+
+player=player=="X"?"O":"X";
+turn.innerHTML="Player "+player+" Turn";
+
+}
+
+});
+
+function checkWinner(){
+
+for(let c of wins){
+
+let[a,b,d]=c;
+
+if(board[a]&&board[a]==board[b]&&board[b]==board[d]){
+
+cells[a].classList.add("win");
+cells[b].classList.add("win");
+cells[d].classList.add("win");
+
+return true;
+
+}
+
+}
+
+return false;
+
+}
+
+function resetGame(){
+
+board=["","","","","","","","",""];
+
+cells.forEach(c=>{
+c.innerHTML="";
+c.classList.remove("win");
+});
+
+player="X";
+game=true;
+
+turn.innerHTML="Player X Turn";
+msg.innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>

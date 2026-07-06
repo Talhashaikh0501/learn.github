@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choco Chowk | Premium Dessert Experience</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--bg:#0d0908;
+--bg2:#18110f;
+--card:rgba(255,255,255,.06);
+
+--gold:#f7c873;
+--gold2:#ffdf9f;
+
+--brown:#3d2418;
+
+--white:#fff;
+--light:#d8d8d8;
+
+--glass:blur(18px);
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:linear-gradient(135deg,#120b08,#24140d,#140d09);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+body::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+body::-webkit-scrollbar-thumb{
+
+background:var(--gold);
+border-radius:20px;
+
+}
+
+body::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+/* Animated Background */
+
+.bg{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+z-index:-10;
+
+}
+
+.blob{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+animation:float 15s infinite alternate;
+
+opacity:.5;
+
+}
+
+.b1{
+
+width:350px;
+height:350px;
+
+background:#ffb347;
+
+top:-120px;
+left:-120px;
+
+}
+
+.b2{
+
+width:300px;
+height:300px;
+
+background:#7b3f00;
+
+bottom:-100px;
+right:-100px;
+
+animation-duration:20s;
+
+}
+
+.b3{
+
+width:280px;
+height:280px;
+
+background:#f4a460;
+
+top:40%;
+left:55%;
+
+animation-duration:18s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) translateX(0) scale(1);
+
+}
+
+100%{
+
+transform:translateY(-60px) translateX(60px) scale(1.25);
+
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+backdrop-filter:blur(20px);
+
+background:rgba(0,0,0,.2);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+transition:.4s;
+
+}
+
+.logo{
+
+font-size:32px;
+
+font-weight:800;
+
+font-family:'Playfair Display',serif;
+
+color:var(--gold);
+
+letter-spacing:1px;
+
+}
+
+.logo span{
+
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:35px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.35s;
+
+}
+
+nav ul li a:hover{
+
+color:var(--gold);
+
+}
+
+.btn{
+
+padding:12px 28px;
+
+background:linear-gradient(135deg,var(--gold),#ff9d00);
+
+color:#222;
+
+border:none;
+
+font-weight:700;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 25px rgba(255,200,90,.35);
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 40px rgba(255,200,90,.45);
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:140px 8% 80px;
+
+gap:60px;
+
+}
+
+.left{
+
+flex:1;
+
+}
+
+.left h3{
+
+color:var(--gold);
+
+font-size:22px;
+
+margin-bottom:20px;
+
+}
+
+.left h1{
+
+font-size:72px;
+
+font-family:'Playfair Display',serif;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.left p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#d6d6d6;
+
+max-width:620px;
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.outline{
+
+background:transparent;
+
+border:2px solid var(--gold);
+
+color:white;
+
+}
+
+.outline:hover{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+.right{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.circle{
+
+width:560px;
+height:560px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,#ffdf9f,#7a3d00);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 0 70px rgba(255,200,90,.35);
+
+animation:rotateGlow 8s infinite alternate;
+
+}
+
+.circle img{
+
+width:78%;
+
+filter:drop-shadow(0 30px 40px rgba(0,0,0,.5));
+
+animation:floatDessert 4s ease-in-out infinite;
+
+}
+
+@keyframes floatDessert{
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+@keyframes rotateGlow{
+
+100%{
+
+box-shadow:0 0 120px rgba(255,200,90,.65);
+
+}
+
+}
+
+section{
+
+padding:100px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:48px;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#cfcfcf;
+
+margin-bottom:60px;
+
+max-width:750px;
+
+margin-inline:auto;
+
+line-height:1.8;
+
+}
+
+/* STATS */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.stat{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+padding:35px;
+
+border-radius:24px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+}
+
+.stat h2{
+
+font-size:46px;
+
+color:var(--gold);
+
+margin-bottom:10px;
+
+}
+
+.stat p{
+
+color:#d2d2d2;
+
+}
+
+/* FEATURES */
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.feature{
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.45s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--gold);
+
+}
+
+.icon{
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+.feature h3{
+
+font-size:24px;
+
+margin-bottom:12px;
+
+}
+
+.feature p{
+
+line-height:1.8;
+
+color:#d6d6d6;
+
+}
+
+@media(max-width:1100px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.left p{
+
+margin:auto auto 40px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.circle{
+
+width:400px;
+height:400px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.left h1{
+
+font-size:48px;
+
+}
+
+.circle{
+
+width:300px;
+height:300px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.title{
+
+font-size:36px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg">
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+</div>
+
+<nav>
+
+<div class="logo">Choco <span>Chowk</span></div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<button class="btn">Order Now</button>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<h3>🍫 Premium Handmade Desserts</h3>
+
+<h1>
+Crafting Sweet
+<br>
+Moments at
+<span style="color:var(--gold);">
+Choco Chowk
+</span>
+</h1>
+
+<p>
+
+Indulge in rich chocolates, creamy shakes, waffles,
+brownies, sizzling desserts, and handcrafted treats
+made with premium ingredients to satisfy every sweet craving.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn">Explore Menu</button>
+
+<button class="btn outline">Visit Store</button>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="circle">
+
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" alt="Dessert">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Why Everyone Loves Choco Chowk
+</h2>
+
+<p class="subtitle">
+
+Every dessert is freshly prepared with premium ingredients,
+beautiful presentation, and unforgettable taste.
+
+</p>
+
+<div class="stats">
+
+<div class="stat">
+
+<h2>15K+</h2>
+
+<p>Happy Customers</p>
+
+</div>
+
+<div class="stat">
+
+<h2>50+</h2>
+
+<p>Premium Desserts</p>
+
+</div>
+
+<div class="stat">
+
+<h2>4.9★</h2>
+
+<p>Average Rating</p>
+
+</div>
+
+<div class="stat">
+
+<h2>100%</h2>
+
+<p>Fresh Ingredients</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">
+Why Choose Us
+</h2>
+
+<p class="subtitle">
+
+A dessert destination where quality meets luxury.
+
+</p>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="icon">🍫</div>
+
+<h3>Premium Chocolate</h3>
+
+<p>
+Imported chocolate with rich flavor and silky texture for an unforgettable experience.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">🧁</div>
+
+<h3>Fresh Everyday</h3>
+
+<p>
+Every brownie, waffle, pastry and shake is prepared fresh every single day.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="icon">❤️</div>
+
+<h3>Made with Love</h3>
+
+<p>
+We believe every dessert should create memories, not just satisfy cravings.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PART 2 STARTS FROM HERE -->
+<!-- ========================= -->
+
+<!-- MENU SECTION -->
+
+<style>
+
+.menu-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+.menu-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:28px;
+
+overflow:hidden;
+
+backdrop-filter:blur(20px);
+
+transition:.45s;
+
+position:relative;
+
+}
+
+.menu-card:hover{
+
+transform:translateY(-15px);
+
+border-color:var(--gold);
+
+box-shadow:0 25px 45px rgba(0,0,0,.4);
+
+}
+
+.menu-card img{
+
+width:100%;
+
+height:270px;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.menu-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.badge{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+background:linear-gradient(135deg,var(--gold),#ff9800);
+
+color:#111;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+.menu-content{
+
+padding:28px;
+
+}
+
+.menu-content h3{
+
+font-size:28px;
+
+margin-bottom:12px;
+
+}
+
+.menu-content p{
+
+color:#d6d6d6;
+
+line-height:1.8;
+
+margin-bottom:22px;
+
+}
+
+.price-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.price{
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--gold);
+
+}
+
+.buy{
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+border:none;
+
+cursor:pointer;
+
+font-size:22px;
+
+background:linear-gradient(135deg,var(--gold),#ff9800);
+
+transition:.35s;
+
+}
+
+.buy:hover{
+
+transform:rotate(15deg) scale(1.1);
+
+}
+
+.signature{
+
+margin-top:130px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.signature img{
+
+width:100%;
+
+border-radius:35px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.signature-text h2{
+
+font-size:54px;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:25px;
+
+}
+
+.signature-text p{
+
+line-height:2;
+
+color:#d6d6d6;
+
+margin-bottom:35px;
+
+}
+
+.list{
+
+display:grid;
+
+gap:18px;
+
+margin-bottom:40px;
+
+}
+
+.list div{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+font-size:18px;
+
+}
+
+.tick{
+
+width:38px;
+
+height:38px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+color:var(--gold);
+
+font-weight:bold;
+
+}
+
+@media(max-width:1100px){
+
+.menu-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.signature{
+
+grid-template-columns:1fr;
+
+}
+
+.signature-text{
+
+text-align:center;
+
+}
+
+.list{
+
+justify-items:center;
+
+}
+
+}
+
+</style>
+
+<section id="menu">
+
+<h2 class="title">
+
+Our Signature Desserts
+
+</h2>
+
+<p class="subtitle">
+
+Freshly handcrafted desserts made with premium ingredients and lots of love.
+
+</p>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+
+<div class="badge">
+BEST SELLER
+</div>
+
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80">
+
+<div class="menu-content">
+
+<h3>Chocolate Waffle</h3>
+
+<p>
+
+Golden crispy waffle loaded with Belgian chocolate,
+Nutella drizzle, vanilla ice cream and crunchy almonds.
+
+</p>
+
+<div class="price-row">
+
+<div class="price">
+₹249
+</div>
+
+<button class="buy">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="menu-card">
+
+<div class="badge">
+HOT
+</div>
+
+<img src="https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e?auto=format&fit=crop&w=900&q=80">
+
+<div class="menu-content">
+
+<h3>Brownie Sizzler</h3>
+
+<p>
+
+Warm chocolate brownie served on a sizzling plate
+with vanilla ice cream and rich hot chocolate sauce.
+
+</p>
+
+<div class="price-row">
+
+<div class="price">
+₹299
+</div>
+
+<button class="buy">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="menu-card">
+
+<div class="badge">
+NEW
+</div>
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80">
+
+<div class="menu-content">
+
+<h3>Premium Pastry</h3>
+
+<p>
+
+Layers of moist chocolate sponge,
+Belgian mousse and silky dark chocolate glaze.
+
+</p>
+
+<div class="price-row">
+
+<div class="price">
+₹179
+</div>
+
+<button class="buy">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="signature">
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+<div class="signature-text">
+
+<h2>
+
+Chocolate is Happiness You Can Taste
+
+</h2>
+
+<p>
+
+At Choco Chowk every dessert is carefully handcrafted
+using premium chocolate, fresh dairy, natural flavors
+and world-class ingredients to create an unforgettable
+dessert experience.
+
+</p>
+
+<div class="list">
+
+<div>
+
+<div class="tick">
+✓
+</div>
+
+100% Fresh Ingredients
+
+</div>
+
+<div>
+
+<div class="tick">
+✓
+</div>
+
+Imported Belgian Chocolate
+
+</div>
+
+<div>
+
+<div class="tick">
+✓
+</div>
+
+Freshly Prepared Everyday
+
+</div>
+
+<div>
+
+<div class="tick">
+✓
+</div>
+
+Loved By Thousands
+
+</div>
+
+</div>
+
+<button class="btn">
+
+View Full Menu
+
+</button>
+
+</div>
+
+</section>
+
+<!-- NEXT PART:
+Gallery
+Offers
+Reviews
+FAQ
+Contact
+Footer
+Animations
+JavaScript -->
+
+<!-- ========================= -->
+<!-- GALLERY SECTION -->
+<!-- ========================= -->
+
+<style>
+
+.gallery{
+
+margin-top:30px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.gallery-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:25px;
+
+height:320px;
+
+cursor:pointer;
+
+background:#222;
+
+}
+
+.gallery-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.7s;
+
+}
+
+.gallery-card:hover img{
+
+transform:scale(1.12);
+
+}
+
+.gallery-overlay{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.75));
+
+opacity:0;
+
+transition:.5s;
+
+}
+
+.gallery-card:hover .gallery-overlay{
+
+opacity:1;
+
+}
+
+.gallery-overlay h3{
+
+font-size:28px;
+
+font-family:'Playfair Display',serif;
+
+color:white;
+
+}
+
+@media(max-width:1100px){
+
+.gallery{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.offer-section{
+
+margin-top:120px;
+
+padding:70px;
+
+border-radius:35px;
+
+background:linear-gradient(135deg,#2f170c,#5d2e0a);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:40px;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.offer-section::before{
+
+content:"";
+
+position:absolute;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+right:-140px;
+
+top:-140px;
+
+}
+
+.offer-left{
+
+max-width:650px;
+
+z-index:2;
+
+}
+
+.offer-left h2{
+
+font-size:54px;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:20px;
+
+}
+
+.offer-left p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#ececec;
+
+margin-bottom:35px;
+
+}
+
+.discount{
+
+font-size:90px;
+
+font-weight:800;
+
+color:var(--gold);
+
+line-height:1;
+
+}
+
+.offer-right{
+
+z-index:2;
+
+}
+
+.offer-right img{
+
+width:420px;
+
+filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));
+
+animation:floatDessert 4s ease-in-out infinite;
+
+}
+
+@media(max-width:1100px){
+
+.offer-section{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:50px;
+
+}
+
+.offer-right img{
+
+width:280px;
+
+}
+
+.discount{
+
+font-size:70px;
+
+}
+
+.offer-left h2{
+
+font-size:42px;
+
+}
+
+}
+
+</style>
+
+<section id="gallery">
+
+<h2 class="title">
+
+Desserts Gallery
+
+</h2>
+
+<p class="subtitle">
+
+Take a look at some of our most loved desserts.
+
+</p>
+
+<div class="gallery">
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1488477304112-4944851de03d?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Belgian Waffle</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Chocolate Shake</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Loaded Brownie</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Ice Cream Sundae</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Nutella Pancake</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Chocolate Pastry</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1515037893149-de7f840978e2?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Oreo Shake</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-card">
+
+<img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=80">
+
+<div class="gallery-overlay">
+
+<h3>Premium Dessert</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="offer-section">
+
+<div class="offer-left">
+
+<div class="discount">
+
+30% OFF
+
+</div>
+
+<h2>
+
+Weekend Dessert Festival
+
+</h2>
+
+<p>
+
+Enjoy exciting offers on waffles, brownies,
+ice creams, pastries and premium shakes every
+Saturday & Sunday.
+
+Bring your friends and celebrate sweetness together.
+
+</p>
+
+<button class="btn">
+
+Claim Offer
+
+</button>
+
+</div>
+
+<div class="offer-right">
+
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- PART 4 -->
+<!-- Customer Reviews + FAQ + Contact -->
+<!-- ================================= -->
+
+<!-- ================================= -->
+<!-- CUSTOMER REVIEWS -->
+<!-- ================================= -->
+
+<style>
+
+.review-wrapper{
+
+margin-top:40px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.review-card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:35px;
+
+border-radius:28px;
+
+transition:.45s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.review-card::before{
+
+content:"★★★★★";
+
+position:absolute;
+
+right:25px;
+
+top:20px;
+
+font-size:14px;
+
+letter-spacing:3px;
+
+color:var(--gold);
+
+opacity:.35;
+
+}
+
+.review-card:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--gold);
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.review-top{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:22px;
+
+}
+
+.review-top img{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:3px solid var(--gold);
+
+}
+
+.review-top h3{
+
+font-size:22px;
+
+}
+
+.review-top span{
+
+font-size:14px;
+
+color:#bbb;
+
+}
+
+.review-card p{
+
+line-height:1.9;
+
+color:#ddd;
+
+}
+
+.stars{
+
+margin-top:22px;
+
+font-size:20px;
+
+color:gold;
+
+letter-spacing:2px;
+
+}
+
+@media(max-width:1100px){
+
+.review-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.faq{
+
+margin-top:120px;
+
+display:grid;
+
+gap:22px;
+
+}
+
+.faq-item{
+
+background:rgba(255,255,255,.05);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+}
+
+.question{
+
+padding:24px 30px;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-size:20px;
+
+font-weight:600;
+
+}
+
+.answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.45s;
+
+color:#ccc;
+
+padding:0 30px;
+
+line-height:1.9;
+
+}
+
+.faq-item.active .answer{
+
+padding:0 30px 28px;
+
+max-height:250px;
+
+}
+
+.faq-item.active .plus{
+
+transform:rotate(45deg);
+
+}
+
+.plus{
+
+font-size:34px;
+
+transition:.4s;
+
+color:var(--gold);
+
+}
+
+.contact-box{
+
+margin-top:120px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:45px;
+
+}
+
+.contact-info{
+
+background:rgba(255,255,255,.05);
+
+padding:45px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-info h2{
+
+font-size:42px;
+
+font-family:'Playfair Display',serif;
+
+margin-bottom:20px;
+
+}
+
+.contact-info p{
+
+line-height:2;
+
+color:#ddd;
+
+margin-bottom:30px;
+
+}
+
+.contact-list{
+
+display:grid;
+
+gap:20px;
+
+}
+
+.contact-list div{
+
+display:flex;
+
+gap:18px;
+
+align-items:center;
+
+font-size:18px;
+
+}
+
+.contact-form{
+
+background:rgba(255,255,255,.05);
+
+padding:45px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+width:100%;
+
+padding:18px;
+
+margin-bottom:18px;
+
+background:#1f1a17;
+
+border:none;
+
+outline:none;
+
+color:#fff;
+
+border-radius:15px;
+
+font-size:16px;
+
+}
+
+.contact-form textarea{
+
+height:160px;
+
+resize:none;
+
+}
+
+@media(max-width:1000px){
+
+.contact-box{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+<section id="reviews">
+
+<h2 class="title">
+
+What Our Customers Say
+
+</h2>
+
+<p class="subtitle">
+
+Thousands of dessert lovers visit Choco Chowk every month.
+
+</p>
+
+<div class="review-wrapper">
+
+<div class="review-card">
+
+<div class="review-top">
+
+<img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+<div>
+
+<h3>Priya Shah</h3>
+
+<span>Food Blogger</span>
+
+</div>
+
+</div>
+
+<p>
+
+The waffles are absolutely amazing! Rich chocolate,
+perfect presentation and outstanding taste.
+
+</p>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+</div>
+
+<div class="review-card">
+
+<div class="review-top">
+
+<img src="https://randomuser.me/api/portraits/men/44.jpg">
+
+<div>
+
+<h3>Rahul Jain</h3>
+
+<span>Customer</span>
+
+</div>
+
+</div>
+
+<p>
+
+The brownie sizzler is the best I've ever had.
+Highly recommended for chocolate lovers.
+
+</p>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+</div>
+
+<div class="review-card">
+
+<div class="review-top">
+
+<img src="https://randomuser.me/api/portraits/women/25.jpg">
+
+<div>
+
+<h3>Ayesha Khan</h3>
+
+<span>Regular Customer</span>
+
+</div>
+
+</div>
+
+<p>
+
+Everything from shakes to pastries tastes premium.
+Definitely my favorite dessert destination.
+
+</p>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<div class="question">
+
+Do you offer home delivery?
+
+<div class="plus">+</div>
+
+</div>
+
+<div class="answer">
+
+Yes. We provide delivery through major food delivery partners and direct takeaway.
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="question">
+
+Do you make custom birthday cakes?
+
+<div class="plus">+</div>
+
+</div>
+
+<div class="answer">
+
+Yes! We prepare customized cakes with different flavors and premium decorations.
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="question">
+
+Are fresh ingredients used?
+
+<div class="plus">+</div>
+
+</div>
+
+<div class="answer">
+
+Absolutely. Every dessert is freshly prepared using high-quality ingredients.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="contact-box">
+
+<div class="contact-info">
+
+<h2>Visit Choco Chowk</h2>
+
+<p>
+
+We'd love to serve you our handcrafted desserts.
+Come with friends and family for an unforgettable sweet experience.
+
+</p>
+
+<div class="contact-list">
+
+<div>📍 Your Shop Address</div>
+
+<div>📞 +91 XXXXX XXXXX</div>
+
+<div>✉ hello@chocochowk.com</div>
+
+<div>🕒 11:00 AM - 11:00 PM</div>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Phone Number">
+
+<textarea placeholder="Your Message"></textarea>
+
+<button class="btn">
+
+Send Message
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PART 5 -->
+<!-- Footer + WhatsApp + JS -->
+<!-- ========================= -->
+
+<!-- ================================= -->
+<!-- PREMIUM FOOTER -->
+<!-- ================================= -->
+
+<style>
+
+.footer{
+
+margin-top:120px;
+
+padding:80px 8% 30px;
+
+background:linear-gradient(180deg,#1a120e,#0d0908);
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:40px;
+
+margin-bottom:60px;
+
+}
+
+.footer h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:36px;
+
+margin-bottom:20px;
+
+color:var(--gold);
+
+}
+
+.footer p{
+
+line-height:1.9;
+
+color:#cfcfcf;
+
+}
+
+.footer h4{
+
+margin-bottom:20px;
+
+font-size:20px;
+
+}
+
+.footer ul{
+
+list-style:none;
+
+}
+
+.footer ul li{
+
+margin-bottom:14px;
+
+}
+
+.footer ul li a{
+
+text-decoration:none;
+
+color:#cfcfcf;
+
+transition:.3s;
+
+}
+
+.footer ul li a:hover{
+
+color:var(--gold);
+
+padding-left:8px;
+
+}
+
+.social{
+
+display:flex;
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.social a{
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+font-size:22px;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.social a:hover{
+
+background:var(--gold);
+
+transform:translateY(-8px);
+
+}
+
+.copy{
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding-top:25px;
+
+text-align:center;
+
+color:#aaa;
+
+}
+
+.whatsapp{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+text-decoration:none;
+
+box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+z-index:999;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+}
+
+.topBtn{
+
+position:fixed;
+
+left:25px;
+
+bottom:25px;
+
+width:58px;
+
+height:58px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--gold);
+
+font-size:22px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+z-index:999;
+
+}
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+@media(max-width:1100px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+
+<h2>Choco Chowk</h2>
+
+<p>
+
+Serving handcrafted desserts made with love,
+premium chocolate and unforgettable flavors.
+
+Your happy place for waffles, brownies,
+pastries, shakes and sweet memories.
+
+</p>
+
+<div class="social">
+
+<a href="#">🍫</a>
+
+<a href="#">📷</a>
+
+<a href="#">👍</a>
+
+<a href="#">▶</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#menu">Menu</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Opening Hours</h4>
+
+<ul>
+
+<li>Mon - Fri</li>
+
+<li>11 AM - 11 PM</li>
+
+<li>Saturday</li>
+
+<li>10 AM - 12 AM</li>
+
+<li>Sunday</li>
+
+<li>10 AM - 12 AM</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<ul>
+
+<li>📍 Your Address</li>
+
+<li>📞 +91 XXXXX XXXXX</li>
+
+<li>✉ hello@chocochowk.com</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 Choco Chowk. Crafted with ❤️ for Dessert Lovers.
+
+</div>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">
+
+💬
+
+</a>
+
+<button class="topBtn">
+
+↑
+
+</button>
+
+<script>
+
+const faq=document.querySelectorAll(".faq-item");
+
+faq.forEach(item=>{
+
+item.querySelector(".question").onclick=()=>{
+
+item.classList.toggle("active");
+
+}
+
+});
+
+const reveal=document.querySelectorAll("section,.footer");
+
+window.addEventListener("scroll",()=>{
+
+reveal.forEach(el=>{
+
+let top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-120){
+
+el.classList.add("active");
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section,.footer").forEach(el=>{
+
+el.classList.add("reveal");
+
+});
+
+const stats=document.querySelectorAll(".stat h2");
+
+let counted=false;
+
+window.addEventListener("scroll",()=>{
+
+const statSection=document.querySelector(".stats");
+
+if(!statSection)return;
+
+if(window.scrollY>statSection.offsetTop-500 && !counted){
+
+counted=true;
+
+stats.forEach(stat=>{
+
+let text=stat.innerText;
+
+let number=parseInt(text.replace(/\D/g,""));
+
+let suffix=text.replace(/[0-9]/g,"");
+
+let count=0;
+
+let speed=Math.max(1,Math.ceil(number/80));
+
+let interval=setInterval(()=>{
+
+count+=speed;
+
+if(count>=number){
+
+count=number;
+
+clearInterval(interval);
+
+}
+
+stat.innerText=count+suffix;
+
+},20);
+
+});
+
+}
+
+});
+
+const topBtn=document.querySelector(".topBtn");
+
+window.addEventListener("scroll",()=>{
+
+topBtn.style.display=window.scrollY>400?"block":"none";
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+
+link.onclick=e=>{
+
+e.preventDefault();
+
+const target=document.querySelector(link.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+};
+
+});
+
+document.querySelector(".contact-form button").onclick=()=>{
+
+const name=document.querySelector(".contact-form input").value;
+
+if(name.trim()==""){
+
+alert("Please enter your name.");
+
+return;
+
+}
+
+alert("Thank you for contacting Choco Chowk! 🍫");
+
+};
+
+const hero=document.querySelector(".circle");
+
+window.addEventListener("mousemove",e=>{
+
+let x=(window.innerWidth/2-e.pageX)/40;
+
+let y=(window.innerHeight/2-e.pageY)/40;
+
+hero.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+
+});
+
+</script>
+
+</body>
+
+</html>
